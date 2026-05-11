@@ -1,0 +1,5 @@
+{
+  "name": "KUGUESS - The Kenyan Party Game",
+  "description": "A mobile-first, heads-up charades-style party game with an exclusively Kenyan cultural theme. Hold your phone to your forehead and guess!",
+  "requestFramePermissions": ["accelerometer"]
+}

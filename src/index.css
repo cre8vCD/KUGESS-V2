@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #1E0C06;
+  --color-primary: #E55928;
+  --color-accent: #EA2A2B;
+  --color-gold: #F2A900;
+  --color-white: #EBD5B3;
+  --color-card-bg: #2E160A;
+  --color-correct: #009F4D;
+  --color-skip: #F2A900;
+
+  --font-display: "Erica One", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-maasai-pattern {
+  background-color: var(--color-bg);
+  background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 15px,
+      rgba(229, 89, 40, 0.06) 15px,
+      rgba(229, 89, 40, 0.06) 30px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 15px,
+      rgba(242, 169, 0, 0.04) 15px,
+      rgba(242, 169, 0, 0.04) 30px
+    );
+}
+
+.border-pattern {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary) 15px,
+    var(--color-gold) 15px,
+    var(--color-gold) 30px,
+    var(--color-accent) 30px,
+    var(--color-accent) 45px
+  );
+}
+
+@keyframes expand-ring {
+  0% { transform: scale(0); opacity: 1; border-width: 30px; }
+  100% { transform: scale(1.5); opacity: 0; border-width: 5px; }
+}
+
+@keyframes intro-logo {
+  0% { transform: translateY(40px) scale(0.8) rotate(-5deg); opacity: 0; }
+  25% { transform: translateY(0) scale(1.1) rotate(2deg); opacity: 1; }
+  40% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+  80% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+  100% { transform: translateY(-40px) scale(1.2); opacity: 0; }
+}
+
+@keyframes intro-text-color {
+  0% { color: var(--color-gold); }
+  50% { color: var(--color-primary); text-shadow: 4px 4px 0px var(--color-accent); }
+  100% { color: var(--color-white); text-shadow: 4px 4px 0px var(--color-primary); }
+}
+
+@keyframes expand-line {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.animate-expand-ring {
+  animation: expand-ring 2.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+.animate-intro-logo {
+  animation: intro-logo 3.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.intro-text {
+  animation: intro-text-color 1.5s infinite alternate;
+}
+
+.animate-expand-line {
+  animation: expand-line 0.8s ease-in-out 0.8s forwards;
+}
+
+.animate-pop {
+  animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
